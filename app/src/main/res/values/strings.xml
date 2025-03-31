@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MobileDevelopmentAssign2</string>
+    <string name="main_menu">Welcome to the Healthy Eating App!</string>
+    <string name="app_logo">app logo</string>
+    <string name="welcome_message">Welcome to the healthy eating app!</string>
+    <string name="welcome_message_open">Welcome to the Healthy Eating App, an app that helps you keep track of your eating. We have many features such as being able to view our menu, use our calorie calculator, leave feedback or view the company policy.</string>
+    <string name="home_nav">Home</string>
+    <string name="menu_nav">Menu\n</string>
+    <string name="calorie_nav">Calorie Calculator</string>
+    <string name="feedback_nav">Feedback</string>
+    <string name="policy_nav">Company Policy</string>
+    <string name="banner_title">Todays Offers!</string>
+</resources>
