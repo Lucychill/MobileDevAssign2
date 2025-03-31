@@ -25,9 +25,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="602dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="600dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="183dp"
         android:background="#4CAF50"
         android:orientation="horizontal"
@@ -58,6 +58,7 @@
         android:layout_width="603dp"
         android:layout_height="87dp"
         android:layout_marginTop="770dp"
+        android:layout_marginBottom="30dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/home_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -76,13 +77,13 @@
             android:textAllCaps="false"
             android:textColor="#8BC34A"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="635dp" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/menu_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -92,11 +93,11 @@
             android:textAllCaps="false"
             android:textColor="#8BC34A"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/calculator_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -106,13 +107,13 @@
             android:textAllCaps="false"
             android:textColor="#8BC34A"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="315dp"
             tools:layout_editor_absoluteY="635dp" />
 
         <Button
-            android:id="@+id/button14"
+            android:id="@+id/feedback_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -122,13 +123,13 @@
             android:textAllCaps="false"
             android:textColor="#8BC34A"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="473dp"
             tools:layout_editor_absoluteY="635dp" />
 
         <Button
-            android:id="@+id/button15"
+            android:id="@+id/policy_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -138,7 +139,7 @@
             android:textAllCaps="false"
             android:textColor="#8BC34A"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="631dp"
             tools:layout_editor_absoluteY="662dp" />
@@ -149,7 +150,7 @@
         android:id="@+id/imageView"
         android:layout_width="419dp"
         android:layout_height="237dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -157,14 +158,14 @@
 
     <TextView
         android:id="@+id/banner_title"
-        android:layout_width="263dp"
-        android:layout_height="35dp"
+        android:layout_width="289dp"
+        android:layout_height="57dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="33dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/banner_title"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
@@ -175,7 +176,7 @@
     <ImageButton
         android:id="@+id/imageButton4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="420dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
@@ -188,7 +189,7 @@
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="591dp"
