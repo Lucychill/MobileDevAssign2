@@ -10,4 +10,9 @@
     <string name="feedback_nav">Feedback</string>
     <string name="policy_nav">Company Policy</string>
     <string name="banner_title">Todays Offers!</string>
+    <string name="menu_title">Menu</string>
+    <string name="items_title">Items</string>
+    <string name="starter_title">Starters</string>
+    <string name="mains_title">Main Courses</string>
+    <string name="dessert_title">Desserts</string>
 </resources>

@@ -3,11 +3,11 @@ package com.example.mobiledevelopmentassign2;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-// Navigation to Company Policy page
-public class CompanyPolicyActivity extends AppCompatActivity {
+// Navigation to the Main Page
+public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.company_policy_main);
+        setContentView(R.layout.activity_main);
     }
 }

@@ -1,9 +1,7 @@
 package com.example.mobiledevelopmentassign2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -12,8 +10,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Declare the buttons
-    Button menuBtn, feedbackBtn, calculatorBtn, policyBtn;
+    // Initialisation of the buttons on the home menu
+    Button menuBtn, feedbackBtn, calculatorBtn, policyBtn, homeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +19,26 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Set system window insets if you're using edge-to-edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // Link buttons to their XML IDs
+        // Link buttons to their XML files so navigation works
         menuBtn = findViewById(R.id.menuBtn);
         feedbackBtn = findViewById(R.id.feedbackBtn);
         calculatorBtn = findViewById(R.id.calculatorBtn);
         policyBtn = findViewById(R.id.policyBtn);
+        homeBtn = findViewById(R.id.homeBtn);
 
-        // Set up navigation for each button
+
+        // Each button has an intent to take them to a menu
+        homeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
+        });
+
         menuBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
             startActivity(intent);
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         policyBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CompanyPolicyActivity.class);
             startActivity(intent);
+
         });
     }
 }
