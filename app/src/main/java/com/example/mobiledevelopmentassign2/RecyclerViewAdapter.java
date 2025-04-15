@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,12 +22,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.itemList = itemList;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+        TextView nameView;
+        TextView caloriesView;
 
-        public ViewHolder(View view) {
-            super(view);
-            imageView = view.findViewById(R.id.itemImage);
+        public ViewHolder(View itemView) {
+            super(itemView);
+            imageView = itemView.findViewById(R.id.itemImage);
+            nameView = itemView.findViewById(R.id.itemName);
+            caloriesView = itemView.findViewById(R.id.itemCalories);
         }
     }
 
@@ -41,13 +46,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MenuItemAttributes item = itemList.get(position);
         holder.imageView.setImageResource(item.getImageResource());
+        holder.nameView.setText(item.getName());
+        holder.caloriesView.setText(item.getCalories());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, MenuItemActivity.class);
             intent.putExtra("IMAGE_RESOURCE", item.getImageResource());
+            intent.putExtra("NAME", item.getName());
+            intent.putExtra("CALORIES", item.getCalories());
             context.startActivity(intent);
         });
     }
+
 
     @Override
     public int getItemCount() {

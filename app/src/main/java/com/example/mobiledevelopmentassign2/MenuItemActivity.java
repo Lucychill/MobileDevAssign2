@@ -11,14 +11,11 @@ public class MenuItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_item_layout);
+        setContentView(R.layout.activity_menu_item); // ✅ Use correct layout
 
-        ImageView itemImage = findViewById(R.id.detailImage);
+        ImageView itemImage = findViewById(R.id.detailImage); // ✅ Will now be found
 
-        Intent intent = getIntent();
-        int imageRes = intent.getIntExtra("IMAGE_RESOURCE", 0);
-
-        itemImage.setImageResource(imageRes);
+        int imageResId = getIntent().getIntExtra("IMAGE_RESOURCE", 0);
+        itemImage.setImageResource(imageResId);
     }
 }
-

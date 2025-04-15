@@ -24,15 +24,16 @@ public class MenuActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 columns
 
         menuItemList = new ArrayList<>();
-        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_fried_rice));
-        menuItemList.add(new MenuItemAttributes(R.drawable.veggie_wellington));
-        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_salad));
-        menuItemList.add(new MenuItemAttributes(R.drawable.avocado_side_salad));
-        menuItemList.add(new MenuItemAttributes(R.drawable.grilled_carrots));
-        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_soup));
-        menuItemList.add(new MenuItemAttributes(R.drawable.angel_food_cake_with_oranges));
-        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_pudding));
-        menuItemList.add(new MenuItemAttributes(R.drawable.yogurt_dessert));
+        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_fried_rice, "Chicken Fried Rice", "520 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.veggie_wellington, "Veggie Wellington", "460 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_salad, "Chicken Salad", "350 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.avocado_side_salad, "Avocado Side Salad", "290 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.grilled_carrots, "Grilled Carrots", "120 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_soup, "Vegetable Soup", "150 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.angel_food_cake_with_oranges, "Angel Food Cake with Oranges", "280 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_pudding, "Vegetable Pudding", "300 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.yogurt_dessert, "Yogurt Dessert", "200 kcal"));
+
 
         adapter = new RecyclerViewAdapter(this, menuItemList);
         recyclerView.setAdapter(adapter);

@@ -8,12 +8,17 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="589dp"
-        android:layout_height="124dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
         android:background="#409444"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="16dp">
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
             android:id="@+id/textView"
@@ -40,12 +45,14 @@
         android:id="@+id/textView3"
         android:layout_width="233dp"
         android:layout_height="61dp"
+        android:layout_marginBottom="19dp"
         android:text="@string/items_title"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/menuMain"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -56,43 +63,50 @@
 
     <LinearLayout
         android:id="@+id/menuMain"
-        android:layout_width="603dp"
+        android:layout_width="0dp"
         android:layout_height="220dp"
         android:orientation="vertical"
-        android:padding="8dp">
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:orientation="vertical">
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/menuMain">
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:id="@+id/itemDetailLayout"
-        android:layout_width="604dp"
-        android:layout_height="753dp"
+        android:layout_width="601dp"
+        android:layout_height="579dp"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:layout_editor_absoluteY="209dp">
-
-        <ImageView
-            android:id="@+id/itemImage"
-            android:layout_width="303dp"
-            android:layout_height="277dp"
-            android:scaleType="centerCrop" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.111">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="468dp"
+            android:layout_width="548dp"
             android:layout_height="wrap_content"
             android:background="#CDDC39" />
-    </LinearLayout>
 
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -100,9 +114,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <?xml version="1.0" encoding="utf-8"?>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
