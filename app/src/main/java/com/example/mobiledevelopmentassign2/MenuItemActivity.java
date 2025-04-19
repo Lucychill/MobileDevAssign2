@@ -17,5 +17,6 @@ public class MenuItemActivity extends AppCompatActivity {
 
         int imageResId = getIntent().getIntExtra("IMAGE_RESOURCE", 0);
         itemImage.setImageResource(imageResId);
+
     }
 }

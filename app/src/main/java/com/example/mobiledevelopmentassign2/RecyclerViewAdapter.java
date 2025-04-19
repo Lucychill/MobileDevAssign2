@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import java.util.ArrayList;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private final List<MenuItemAttributes> itemList;
+    private final List<MenuItemAttributes> itemList = new ArrayList<>();
     private final Context context;
 
     public RecyclerViewAdapter(Context context, List<MenuItemAttributes> itemList) {
         this.context = context;
-        this.itemList = itemList;
+        this.itemList.addAll(itemList); // Copy values into the mutable list
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -47,13 +49,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         MenuItemAttributes item = itemList.get(position);
         holder.imageView.setImageResource(item.getImageResource());
         holder.nameView.setText(item.getName());
-        holder.caloriesView.setText(item.getCalories());
+        holder.caloriesView.setText(item.getCalorieCount());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, MenuItemActivity.class);
             intent.putExtra("IMAGE_RESOURCE", item.getImageResource());
             intent.putExtra("NAME", item.getName());
-            intent.putExtra("CALORIES", item.getCalories());
+            intent.putExtra("CALORIES", item.getCalorieCount());
             context.startActivity(intent);
         });
     }
@@ -62,5 +64,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public int getItemCount() {
         return itemList.size();
+    }
+
+    public void updateList(List<MenuItemAttributes> newList) {
+        itemList.clear();
+        itemList.addAll(newList);
+        notifyDataSetChanged();
     }
 }

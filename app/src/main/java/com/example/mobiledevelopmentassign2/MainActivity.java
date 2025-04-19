@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     // Initialisation of the buttons on the home menu
-    Button menuBtn, feedbackBtn, calculatorBtn, policyBtn, homeBtn;
+    Button menuBtn, feedbackBtn, calculatorBtn, policyBtn, homeBtn, helpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         calculatorBtn = findViewById(R.id.calculatorBtn);
         policyBtn = findViewById(R.id.policyBtn);
         homeBtn = findViewById(R.id.homeBtn);
-
+        helpBtn = findViewById(R.id.helpBtn);
 
         // Each button has an intent to take them to a menu
         homeBtn.setOnClickListener(v -> {
@@ -57,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
         policyBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CompanyPolicyActivity.class);
             startActivity(intent);
+        });
 
+        helpBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+            startActivity(intent);
         });
     }
 }

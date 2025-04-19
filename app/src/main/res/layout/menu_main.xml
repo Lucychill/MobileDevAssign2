@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A">
+    android:background="#8BC34A"
+    android:paddingBottom="50dp">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -22,13 +23,16 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="102dp"
+            android:layout_width="368dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="serif"
+            android:paddingTop="40dp"
             android:text="@string/menu_title"
             android:textAlignment="center"
-            android:textSize="32sp" />
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -99,6 +103,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.111">
+
+        <LinearLayout
+            android:id="@+id/filterButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/buttonAll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#409444"
+                android:text="All" />
+
+            <Button
+                android:id="@+id/buttonStarters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#409444"
+                android:text="Starters" />
+
+            <Button
+                android:id="@+id/buttonMains"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#409444"
+                android:text="Mains" />
+
+            <Button
+                android:id="@+id/buttonDesserts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#409444"
+                android:text="Desserts" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

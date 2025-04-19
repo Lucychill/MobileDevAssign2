@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.736" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -43,7 +43,8 @@
             android:layout_weight="1"
             android:fontFamily="serif"
             android:text="@string/welcome_message"
-            android:textSize="32sp" />
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -74,9 +75,9 @@
             android:text="@string/home_nav"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#8BC34A"
+            android:textColor="#FFFFFF"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="635dp" />
@@ -90,9 +91,9 @@
             android:text="@string/menu_nav"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#8BC34A"
+            android:textColor="#FFFFFF"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <Button
@@ -104,9 +105,9 @@
             android:text="@string/calorie_nav"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#8BC34A"
+            android:textColor="#FFFFFF"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="315dp"
             tools:layout_editor_absoluteY="635dp" />
@@ -120,9 +121,9 @@
             android:text="@string/feedback_nav"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#8BC34A"
+            android:textColor="#FFFFFF"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="473dp"
             tools:layout_editor_absoluteY="635dp" />
@@ -136,9 +137,9 @@
             android:text="@string/policy_nav"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#8BC34A"
+            android:textColor="#FFFFFF"
             android:textColorLink="#673AB7"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="631dp"
             tools:layout_editor_absoluteY="662dp" />
@@ -204,18 +205,21 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@android:drawable/ic_media_ff" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="76dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="95dp"
-        android:foregroundTint="#009688"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="78dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="#409444"
+        android:text="@string/helpBtn_text"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/banner_title"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:srcCompat="@android:drawable/ic_dialog_alert" />
+        app:layout_constraintVertical_bias="0.611" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

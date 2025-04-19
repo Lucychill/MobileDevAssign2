@@ -17,6 +17,8 @@
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".CalorieCalculatorActivity" />
         <activity android:name=".CompanyPolicyActivity" />
+        <activity android:name=".HelpActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

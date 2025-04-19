@@ -3,12 +3,14 @@ package com.example.mobiledevelopmentassign2;
 public class MenuItemAttributes {
     private int imageResource;
     private String name;
-    private String calories;
+    private String calorieCount;
+    private String category; // 🔥 new field
 
-    public MenuItemAttributes(int imageResource, String name, String calories) {
+    public MenuItemAttributes(int imageResource, String name, String calorieCount, String category) {
         this.imageResource = imageResource;
         this.name = name;
-        this.calories = calories;
+        this.calorieCount = calorieCount;
+        this.category = category; // ✅ set category
     }
 
     public int getImageResource() {
@@ -19,7 +21,11 @@ public class MenuItemAttributes {
         return name;
     }
 
-    public String getCalories() {
-        return calories;
+    public String getCalorieCount() {
+        return calorieCount;
+    }
+
+    public String getCategory() {
+        return category; // ✅ getter
     }
 }

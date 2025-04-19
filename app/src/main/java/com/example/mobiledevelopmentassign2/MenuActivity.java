@@ -1,6 +1,8 @@
 package com.example.mobiledevelopmentassign2;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -15,27 +17,64 @@ public class MenuActivity extends AppCompatActivity {
     private RecyclerViewAdapter adapter;
     private List<MenuItemAttributes> menuItemList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 columns
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3)); // 2 columns
 
         menuItemList = new ArrayList<>();
-        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_fried_rice, "Chicken Fried Rice", "520 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.veggie_wellington, "Veggie Wellington", "460 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_salad, "Chicken Salad", "350 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.avocado_side_salad, "Avocado Side Salad", "290 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.grilled_carrots, "Grilled Carrots", "120 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_soup, "Vegetable Soup", "150 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.angel_food_cake_with_oranges, "Angel Food Cake with Oranges", "280 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_pudding, "Vegetable Pudding", "300 kcal"));
-        menuItemList.add(new MenuItemAttributes(R.drawable.yogurt_dessert, "Yogurt Dessert", "200 kcal"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_fried_rice, "Chicken Fried Rice", "520 kcal", "Main"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.veggie_wellington, "Veggie Wellington", "460 kcal", "Main"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.chicken_salad, "Chicken Salad", "350 kcal", "Main"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.avocado_side_salad, "Avocado Side Salad", "290 kcal", "Starter"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.grilled_carrots, "Grilled Carrots", "120 kcal", "Starter"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_soup, "Vegetable Soup", "150 kcal", "Starter"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.angel_food_cake_with_oranges, "Angel Food Cake with Oranges", "280 kcal", "Dessert"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.vegetable_pudding, "Vegetable Pudding", "300 kcal", "Dessert"));
+        menuItemList.add(new MenuItemAttributes(R.drawable.yogurt_dessert, "Yogurt Dessert", "200 kcal", "Dessert"));
 
 
         adapter = new RecyclerViewAdapter(this, menuItemList);
         recyclerView.setAdapter(adapter);
+
+        Button buttonAll = findViewById(R.id.buttonAll);
+        Button buttonStarters = findViewById(R.id.buttonStarters);
+        Button buttonMains = findViewById(R.id.buttonMains);
+        Button buttonDesserts = findViewById(R.id.buttonDesserts);
+
+        View.OnClickListener filterListener = v -> {
+            String filter = "";
+
+            int id = v.getId();
+            if (id == R.id.buttonStarters) {
+                filter = "Starter";
+            } else if (id == R.id.buttonMains) {
+                filter = "Main";
+            } else if (id == R.id.buttonDesserts) {
+                filter = "Dessert";
+            } else {
+                filter = "All";
+            }
+
+
+            List<MenuItemAttributes> filteredList = new ArrayList<>();
+            for (MenuItemAttributes item : menuItemList) {
+                if (filter.equals("All") || item.getCategory().equalsIgnoreCase(filter)) {
+                    filteredList.add(item);
+                }
+            }
+
+            adapter.updateList(filteredList);
+        };
+
+        buttonAll.setOnClickListener(filterListener);
+        buttonStarters.setOnClickListener(filterListener);
+        buttonMains.setOnClickListener(filterListener);
+        buttonDesserts.setOnClickListener(filterListener);
+
     }
 }
