@@ -3,7 +3,7 @@ package com.example.mobiledevelopmentassign2;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-// Navigation to the Main Page
+// main page navigation
 public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
