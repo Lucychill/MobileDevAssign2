@@ -18,4 +18,5 @@
     <string name="help_info">How do I view product information?\nSimply tap on any menu item from the main menu screen to view more details including its name, image, and calorie count.\n\nHow do I add an item to the calorie calculator?\nWhile viewing an item\'s details, tap the “Add to Calorie Calculator” button to include it in your daily total. You can view your current calorie total in the Calorie Calculator screen.\n\nWhere can I view company policy?\nYou can find our company policy by tapping the “Company Policy” option from the main navigation menu or the info section on the home screen.\n\nWhere can I leave feedback?\nWe love hearing from you! Tap on “Feedback” in the app menu to share your thoughts or report any issues. Fill out your name, email, and message, then tap Submit.</string>
     <string name="helpBtn_text">Help</string>
     <string name="company_policy_title">Company Policy</string>
+    <string name="loadingmessage">Loading...</string>
 </resources>

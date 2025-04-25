@@ -1,16 +1,19 @@
 package com.example.mobiledevelopmentassign2;
 
 public class MenuItemAttributes {
+
     private int imageResource;
     private String name;
+    private String description;
     private String calorieCount;
-    private String category; // 🔥 new field
+    private String category;
 
-    public MenuItemAttributes(int imageResource, String name, String calorieCount, String category) {
+    public MenuItemAttributes(int imageResource, String name, String description, String calorieCount, String category) {
         this.imageResource = imageResource;
         this.name = name;
+        this.description = description;
         this.calorieCount = calorieCount;
-        this.category = category; // ✅ set category
+        this.category = category;
     }
 
     public int getImageResource() {
@@ -21,11 +24,15 @@ public class MenuItemAttributes {
         return name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public String getCalorieCount() {
         return calorieCount;
     }
 
     public String getCategory() {
-        return category; // ✅ getter
+        return category;
     }
 }

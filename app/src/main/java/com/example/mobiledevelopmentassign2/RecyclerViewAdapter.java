@@ -31,9 +31,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.itemImage);
+            imageView = itemView.findViewById(R.id.menuItemImage);
             nameView = itemView.findViewById(R.id.itemName);
-            caloriesView = itemView.findViewById(R.id.itemCalories);
+            caloriesView = itemView.findViewById(R.id.menuItemCalories);
         }
     }
 
@@ -55,10 +55,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             Intent intent = new Intent(context, MenuItemActivity.class);
             intent.putExtra("IMAGE_RESOURCE", item.getImageResource());
             intent.putExtra("NAME", item.getName());
+            intent.putExtra("DESCRIPTION", item.getDescription());
             intent.putExtra("CALORIES", item.getCalorieCount());
             context.startActivity(intent);
         });
     }
+
 
 
     @Override
