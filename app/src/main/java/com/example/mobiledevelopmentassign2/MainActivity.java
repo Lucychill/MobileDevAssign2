@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         feedbackBtn.setOnClickListener(v -> navigateAndChangeImage(FeedbackActivity.class));
         calculatorBtn.setOnClickListener(v -> navigateAndChangeImage(CalorieCalculatorActivity.class));
         policyBtn.setOnClickListener(v -> navigateAndChangeImage(CompanyPolicyActivity.class));
-        homeBtn.setOnClickListener(v -> navigateAndChangeImage(HomeActivity.class));
+        homeBtn.setOnClickListener(v -> navigateAndChangeImage(MainActivity.class));
         helpBtn.setOnClickListener(v -> navigateAndChangeImage(HelpActivity.class));
     }
 
