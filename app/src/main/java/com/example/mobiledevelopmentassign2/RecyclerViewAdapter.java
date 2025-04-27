@@ -21,7 +21,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public RecyclerViewAdapter(Context context, List<MenuItemAttributes> itemList) {
         this.context = context;
-        this.itemList.addAll(itemList); // Copy values into the mutable list
+        this.itemList.addAll(itemList);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

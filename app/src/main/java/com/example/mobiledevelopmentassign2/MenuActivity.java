@@ -23,6 +23,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
 
+        // each menu item + description, calories and category for easy filtering
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3)); // 2 columns
 
@@ -111,6 +112,7 @@ public class MenuActivity extends AppCompatActivity {
         View.OnClickListener filterListener = v -> {
             String filter = "";
 
+            // filtering options
             int id = v.getId();
             if (id == R.id.buttonStarters) {
                 filter = "Starter";
@@ -133,6 +135,7 @@ public class MenuActivity extends AppCompatActivity {
             adapter.updateList(filteredList);
         };
 
+        // listeners for buttons
         buttonAll.setOnClickListener(filterListener);
         buttonStarters.setOnClickListener(filterListener);
         buttonMains.setOnClickListener(filterListener);

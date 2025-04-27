@@ -23,7 +23,7 @@ public class MenuItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_item);
 
-        // Bind views
+        // menu item details
         itemImage = findViewById(R.id.menuItemImage);
         itemTitle = findViewById(R.id.menuItemTitle);
         itemDescription = findViewById(R.id.menuItemDescription);
@@ -31,14 +31,13 @@ public class MenuItemActivity extends AppCompatActivity {
         addToCalculatorBtn = findViewById(R.id.addToCalculatorBtn);
         backBtn = findViewById(R.id.backToMenuBtn);
 
-        // Get data from Intent
         Intent intent = getIntent();
         int imageRes = intent.getIntExtra("IMAGE_RESOURCE", R.drawable.chicken_fried_rice);
         name = intent.getStringExtra("NAME");
         String description = intent.getStringExtra("DESCRIPTION");
         String caloriesStr = intent.getStringExtra("CALORIES");
 
-        // Parse calories safely
+        // get the calories
         try {
             itemCalories = Integer.parseInt(caloriesStr.split(" ")[0]);
         } catch (Exception e) {
@@ -46,16 +45,15 @@ public class MenuItemActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Set data to views
         itemImage.setImageResource(imageRes);
         itemTitle.setText(name);
         itemDescription.setText(description);
         itemCaloriesText.setText("Calories: " + itemCalories);
 
-        // Back button
+        // back button functional
         backBtn.setOnClickListener(v -> finish());
 
-        // Add to calorie tracker and go to calculator
+        // navigate to calorie calculator and add selected item at the same time
         addToCalculatorBtn.setOnClickListener(v -> {
             CalorieTracker.addItem(new CalorieItem(name, itemCalories));
             Intent calorieIntent = new Intent(MenuItemActivity.this, CalorieCalculatorActivity.class);

@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Header with Logo and Title -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +36,6 @@
             android:src="@drawable/healthyeatingapplogo" />
     </LinearLayout>
 
-    <!-- Name Field -->
     <EditText
         android:id="@+id/nameField"
         android:layout_width="match_parent"
@@ -48,7 +46,6 @@
         android:inputType="textPersonName"
         android:padding="10dp" />
 
-    <!-- Email Field -->
     <EditText
         android:id="@+id/emailField"
         android:layout_width="match_parent"
@@ -59,7 +56,6 @@
         android:inputType="textEmailAddress"
         android:padding="10dp" />
 
-    <!-- Feedback Field -->
     <EditText
         android:id="@+id/feedbackField"
         android:layout_width="match_parent"
@@ -71,7 +67,6 @@
         android:inputType="textMultiLine"
         android:padding="10dp" />
 
-    <!-- Submit Button -->
     <Button
         android:id="@+id/submitFeedbackBtn"
         android:layout_width="match_parent"

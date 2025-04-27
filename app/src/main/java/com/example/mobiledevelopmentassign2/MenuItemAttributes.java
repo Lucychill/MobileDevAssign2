@@ -1,5 +1,6 @@
 package com.example.mobiledevelopmentassign2;
 
+// class for each menu item with name, description, calories and category for filtering
 public class MenuItemAttributes {
 
     private int imageResource;

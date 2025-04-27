@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     // Array of image resource IDs for the banner
     private final int[] imageView = {
-            R.drawable.chicken_salad,  // Replace with your image resources
+            R.drawable.chicken_salad,
             R.drawable.vegetable_soup,
             R.drawable.yogurt_dessert
     };
-    private int currentImageIndex = 0;  // Index to track the current image
+    private int currentImageIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +33,13 @@ public class MainActivity extends AppCompatActivity {
         // set the layout to the home screen
         setContentView(R.layout.activity_main);
 
-        // adjusting padding
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // link each button with the ID
+        // link each button with their ID
         menuBtn = findViewById(R.id.menuBtn);
         feedbackBtn = findViewById(R.id.feedbackBtn);
         calculatorBtn = findViewById(R.id.calculatorBtn);
@@ -48,13 +47,11 @@ public class MainActivity extends AppCompatActivity {
         homeBtn = findViewById(R.id.homeBtn);
         helpBtn = findViewById(R.id.helpBtn);
 
-        // Set up the banner image view
-        bannerImage = findViewById(R.id.imageView);  // Assuming you added ImageView with id bannerImage in your layout
-
-        // Set the initial image
+        // set up the banner
+        bannerImage = findViewById(R.id.imageView);
         bannerImage.setImageResource(imageView[currentImageIndex]);
 
-        // Set up button listeners to change banner images and navigate to activities
+        // buttons navigate to different activities
         menuBtn.setOnClickListener(v -> navigateAndChangeImage(MenuActivity.class));
         feedbackBtn.setOnClickListener(v -> navigateAndChangeImage(FeedbackActivity.class));
         calculatorBtn.setOnClickListener(v -> navigateAndChangeImage(CalorieCalculatorActivity.class));
@@ -63,13 +60,9 @@ public class MainActivity extends AppCompatActivity {
         helpBtn.setOnClickListener(v -> navigateAndChangeImage(HelpActivity.class));
     }
 
-    // A helper function to navigate to an activity and change the image
     private void navigateAndChangeImage(Class<?> activityClass) {
-        // Change the image when the button is clicked
-        currentImageIndex = (currentImageIndex + 1) % imageView.length;  // Move to next image, loop back if at end
+        currentImageIndex = (currentImageIndex + 1) % imageView.length;
         bannerImage.setImageResource(imageView[currentImageIndex]);
-
-        // Create and start the intent to navigate to the selected activity
         Intent intent = new Intent(MainActivity.this, activityClass);
         startActivity(intent);
     }

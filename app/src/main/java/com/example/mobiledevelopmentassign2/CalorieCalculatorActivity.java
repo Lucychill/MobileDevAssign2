@@ -14,8 +14,6 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calorie_calculator_main);
-
-        // Assign existing declared variables
         selectedItemsText = findViewById(R.id.selectedItemsText);
         totalCaloriesText = findViewById(R.id.totalCaloriesText);
 
@@ -23,7 +21,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         Button returnToMenuBtn = findViewById(R.id.backToMenuButton);
         Button clearBtn = findViewById(R.id.clearBtn);
 
-        // Get item from intent and add to CalorieTracker
+        // add to calorietracker
         Intent incomingIntent = getIntent();
         String receivedItemName = incomingIntent.getStringExtra("ITEM_NAME");
         int receivedItemCalories = incomingIntent.getIntExtra("ITEM_CALORIES", 0);
@@ -47,10 +45,8 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
         // Clear list and refresh
         clearBtn.setOnClickListener(v -> {
             CalorieTracker.clearItems();
-            recreate(); // Refresh screen
+            recreate();
         });
-
-        // 👇 THIS IS THE KEY: Update the display
         updateUI();
     }
 
